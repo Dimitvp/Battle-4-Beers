@@ -43,16 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassCharacteristics.cs" />
-    <Compile Include="ItemsMage.cs" />
-    <Compile Include="ItemsWarrior.cs" />
+    <Compile Include="CoolDownChecker.cs" />
+    <Compile Include="CurrentSpell.cs" />
+    <Compile Include="ExecuteMageCommands.cs" />
+    <Compile Include="ExecuteWarriorCommands.cs" />
+    <Compile Include="GameEnd.cs" />
+    <Compile Include="GameStart.cs" />
     <Compile Include="Mage.cs" />
-    <Compile Include="MageActions.cs" />
-    <Compile Include="MageStats.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WarriorActions.cs" />
-    <Compile Include="WarriorStats.cs" />
+    <Compile Include="Warrior.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

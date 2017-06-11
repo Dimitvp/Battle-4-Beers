@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace FightMastas
 {
-    class ItemsMage
+    public class GameEnd
     {
-        public static bool Staff = false;
+        public static void GameEndWM(Warrior firstPlayer, Mage secondPlayer)
+        {
 
-        public static bool Tome = false;
-
-
+        }
     }
 }
