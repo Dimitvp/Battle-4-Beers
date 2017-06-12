@@ -186,6 +186,7 @@ namespace FightMastas
                     default:
                         if (counter == 4)
                         {
+                            counter = 1;
                             Console.ForegroundColor = ConsoleColor.Blue;
                             Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (mageOption.Length / 2)) + "}", "-> " + mageOption);
                             Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (warrOption.Length / 2)) + "}", warrOption);
@@ -193,6 +194,7 @@ namespace FightMastas
                         }
                         else if (counter == 0)
                         {
+                            counter = 3;
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (mageOption.Length / 2)) + "}", mageOption);
                             Console.WriteLine("{0," + ((Console.WindowWidth / 2) + (warrOption.Length / 2)) + "}", warrOption);
@@ -402,7 +404,7 @@ namespace FightMastas
             {
                 case 2:
                     {
-                        var currentWarrior = new Warrior
+                        var currentWarrior = new Mage
                         {
                             Type = "Berserker",
                             PlayerName = playerName
@@ -411,7 +413,7 @@ namespace FightMastas
                     }
                 case 1:
                     {
-                        var currentWarrior = new Warrior
+                        var currentWarrior = new Mage
                         {
                             Type = "Protector",
                             PlayerName = playerName
@@ -420,7 +422,7 @@ namespace FightMastas
                     }
                 default:
                     {
-                        var currentWarrior = new Warrior
+                        var currentWarrior = new Mage
                         {
                             Type = "Swordmaster",
                             PlayerName = playerName
@@ -436,9 +438,9 @@ namespace FightMastas
 
             var coin = new Random();
 
-            int player = coin.Next(1, 3);
+            int player = coin.Next(1, 10);
 
-            if (player == 1)
+            if (player % 2 == 1)
             {
                 Console.WriteLine($"Player {playerNames[0]} will start");
             }

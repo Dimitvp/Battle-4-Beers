@@ -43,20 +43,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionsWarrior\ArmorUp.cs" />
+    <Compile Include="ActionsWarrior\AxeChop.cs" />
+    <Compile Include="ActionsWarrior\Berserk.cs" />
+    <Compile Include="ActionsWarrior\BladeSlash.cs" />
+    <Compile Include="ActionsWarrior\CriticalStrike.cs" />
+    <Compile Include="ActionsWarrior\Execute.cs" />
+    <Compile Include="ActionsWarrior\Hibernate.cs" />
+    <Compile Include="ActionsWarrior\MaceSwing.cs" />
+    <Compile Include="ActionsWarrior\MirrorImage.cs" />
+    <Compile Include="ActionsWarrior\ShieldSlam.cs" />
+    <Compile Include="ActionsWarrior\WildAxes.cs" />
+    <Compile Include="ActionsWarrior\Windfury.cs" />
     <Compile Include="CoolDownChecker.cs" />
     <Compile Include="CurrentSpell.cs" />
-    <Compile Include="ExecuteMageCommands.cs" />
-    <Compile Include="ExecuteWarriorCommands.cs" />
+    <Compile Include="GetMageCommands.cs" />
+    <Compile Include="GetWarriorCommands.cs" />
     <Compile Include="GameEnd.cs" />
     <Compile Include="GameStart.cs" />
     <Compile Include="Mage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Spells\Amplifier.cs" />
+    <Compile Include="Spells\ArcaneBlast.cs" />
+    <Compile Include="Spells\FireArmor.cs" />
+    <Compile Include="Spells\FireBlast.cs" />
+    <Compile Include="Spells\FrostArmor.cs" />
+    <Compile Include="Spells\FrostBolt.cs" />
+    <Compile Include="Spells\FrozenGround.cs" />
+    <Compile Include="Spells\IcyVeins.cs" />
+    <Compile Include="Spells\Incinerate.cs" />
+    <Compile Include="Spells\ManaRegeneration.cs" />
+    <Compile Include="Spells\Polymorph.cs" />
+    <Compile Include="Spells\PyroBlast.cs" />
     <Compile Include="Warrior.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

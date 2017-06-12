@@ -15,7 +15,7 @@ namespace FightMastas
             {
                 if(counter == 1)
                 {
-                    var getSpell = ExecuteWarriorCommands.ClassChecker(firstPlayer);
+                    var getSpell = GetWarriorCommands.ClassChecker(firstPlayer);
                     if(secondPlayer.MageHealth <= 300 && getSpell.Name == "execute")
                     {
                         GameEnd.GameEndWM(firstPlayer, secondPlayer);
@@ -29,7 +29,7 @@ namespace FightMastas
                         {
                             entry = Console.ReadKey();
                         }
-                        getSpell = ExecuteWarriorCommands.ClassChecker(firstPlayer);
+                        getSpell = GetWarriorCommands.ClassChecker(firstPlayer);
                     }
 
                     if(!CoolDownChecker.CheckCoolDownWarr(firstPlayer, getSpell))
@@ -42,18 +42,18 @@ namespace FightMastas
                         {
                             if (secondPlayer.Type == "frost")
                             {
-                                if (secondPlayer.FrostArmor >= getSpell.Damage)
+                                if (secondPlayer.FrostArmor >= (int) getSpell.Damage)
                                 {
-                                    secondPlayer.FrostArmor -= getSpell.Damage;
+                                    secondPlayer.FrostArmor -= (int) getSpell.Damage;
                                 }
                                 else
                                 {
-                                    secondPlayer.MageHealth -= (getSpell.Damage - secondPlayer.FrostArmor);
+                                    secondPlayer.MageHealth -= (int) (getSpell.Damage - secondPlayer.FrostArmor);
                                 }
                             }
                             else
                             {
-                                secondPlayer.MageHealth -= getSpell.Damage;
+                                secondPlayer.MageHealth -= (int) getSpell.Damage;
                             }
                         }
                         else if(getSpell.Name == "berserk")
@@ -76,13 +76,19 @@ namespace FightMastas
                         {
                             entry = Console.ReadKey();
                         }
-                        GameStartWM(firstPlayer, secondPlayer);
+                        firstPlayer.BerserkModeCooldown++;
+                        firstPlayer.DoubleAttackCooldown++;
+                        firstPlayer.ArmorUpCooldown++;
+                        firstPlayer.ShieldSlamCooldown++;
+                        firstPlayer.WindFuryCooldown++;
+                        getSpell = GetWarriorCommands.ClassChecker(firstPlayer);
                     }
                     
                 }
                 else
                 {
-                    var getSpell = ExecuteMageCommands.ClassChecker(secondPlayer);
+                    secondPlayer.MageMana += secondPlayer.MageManaRegen;
+                    var getSpell = ExecuteMageCommands.ClassChecker(secondPlayer, firstPlayer);
                     if (secondPlayer.MageHealth <= 300 && getSpell.Name == "execute")
                     {
                         GameEnd.GameEndWM(firstPlayer, secondPlayer);
@@ -96,7 +102,7 @@ namespace FightMastas
                         {
                             entry = Console.ReadKey();
                         }
-                        getSpell = ExecuteMageCommands.ClassChecker(secondPlayer);
+                        getSpell = ExecuteMageCommands.ClassChecker(secondPlayer, firstPlayer);
                     }
 
                     if (!CoolDownChecker.CheckCoolDownWarr(firstPlayer, getSpell))
@@ -111,16 +117,16 @@ namespace FightMastas
                             {
                                 if (secondPlayer.FrostArmor >= getSpell.Damage)
                                 {
-                                    secondPlayer.FrostArmor -= getSpell.Damage;
+                                    secondPlayer.FrostArmor -= (int)getSpell.Damage;
                                 }
                                 else
                                 {
-                                    secondPlayer.MageHealth -= (getSpell.Damage - secondPlayer.FrostArmor);
+                                    secondPlayer.MageHealth -= (int)(getSpell.Damage - secondPlayer.FrostArmor);
                                 }
                             }
                             else
                             {
-                                secondPlayer.MageHealth -= getSpell.Damage;
+                                secondPlayer.MageHealth -= (int)getSpell.Damage;
                             }
                         }
                         else if (getSpell.Name == "berserk")
@@ -143,7 +149,7 @@ namespace FightMastas
                         {
                             entry = Console.ReadKey();
                         }
-                        getSpell = ExecuteMageCommands.ClassChecker(secondPlayer);
+                        getSpell = ExecuteMageCommands.ClassChecker(secondPlayer, firstPlayer);
                     }
                 }
             }
