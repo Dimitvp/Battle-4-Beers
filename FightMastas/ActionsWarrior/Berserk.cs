@@ -10,7 +10,15 @@ namespace B4B.ActionsWarrior
     {
         internal CurrentSpell GoBerserk(Warrior warrior)
         {
-            throw new NotImplementedException();
+            var spell = new CurrentSpell();
+
+            spell.Name = "berserk";
+            spell.SacrificialHP = 200;
+            spell.AmplifyRatio = 2;
+            spell.Cooldown = 5;
+            spell.Duration = 3;
+
+            return spell;
         }
     }
 }

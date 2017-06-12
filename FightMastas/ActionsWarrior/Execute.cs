@@ -10,7 +10,11 @@ namespace B4B.ActionsWarrior
     {
         internal CurrentSpell GetExecution(Warrior warrior)
         {
-            throw new NotImplementedException();
+            var spell = new CurrentSpell();
+
+            spell.Execution = true;
+
+            return spell;
         }
     }
 }

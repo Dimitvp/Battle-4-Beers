@@ -10,7 +10,13 @@ namespace B4B.ActionsWarrior
     {
         internal CurrentSpell GetWindFury(Warrior warrior)
         {
-            throw new NotImplementedException();
+            var spell = new CurrentSpell();
+
+            spell.Name = "windfury";
+            spell.Damage = warrior.WarriorDamage * 5;
+            spell.Cooldown = 4;
+
+            return spell;
         }
     }
 }

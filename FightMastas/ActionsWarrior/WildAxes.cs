@@ -10,7 +10,13 @@ namespace B4B.ActionsWarrior
     {
         internal CurrentSpell GetWildAxes(Warrior warrior)
         {
-            throw new NotImplementedException();
+            var spell = new CurrentSpell();
+
+            spell.Name = "wildaxes";
+            spell.Damage = warrior.WarriorDamage * 4;
+            spell.Cooldown = 3;
+
+            return spell;
         }
     }
 }

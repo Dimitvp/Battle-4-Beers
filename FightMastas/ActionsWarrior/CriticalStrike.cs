@@ -10,7 +10,11 @@ namespace B4B.ActionsWarrior
     {
         internal CurrentSpell TurnOnCrit(Warrior warrior)
         {
-            throw new NotImplementedException();
+            var spell = new CurrentSpell();
+
+            spell.Name = "critical";
+
+            return spell;   
         }
     }
 }

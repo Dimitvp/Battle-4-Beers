@@ -10,7 +10,12 @@ namespace B4B.ActionsWarrior
     {
         internal CurrentSpell GetShieldSlam(Warrior warrior)
         {
-            throw new NotImplementedException();
+            var spell = new CurrentSpell();
+
+            spell.Name = "shieldslam";
+            spell.Damage = warrior.WarriorArmor;
+
+            return spell;
         }
     }
 }

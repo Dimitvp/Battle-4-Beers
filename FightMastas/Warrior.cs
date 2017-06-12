@@ -22,6 +22,10 @@ namespace B4B
 
         public int ShieldArmor = 100;
 
+        public bool Invulnerable = false;
+
+        public bool CriticalStrike = false;
+
         public int ShieldSlamCooldown { get; set; }
         public bool ShieldSlamIsCD  { get; set; }
 

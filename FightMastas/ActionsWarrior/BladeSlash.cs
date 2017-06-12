@@ -10,7 +10,12 @@ namespace B4B.ActionsWarrior
     {
         internal CurrentSpell GetSlash(Warrior warrior)
         {
-            throw new NotImplementedException();
+            var spell = new CurrentSpell();
+
+            spell.Name = "slash";
+            spell.Damage = warrior.WarriorDamage * 2;
+
+            return spell;
         }
     }
 }

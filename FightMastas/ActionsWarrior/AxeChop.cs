@@ -8,14 +8,14 @@ namespace B4B.ActionsWarrior
 {
     class AxeChop
     {
-        internal CurrentSpell GetHit()
-        {
-            throw new NotImplementedException();
-        }
-
         internal CurrentSpell GetHit(Warrior warrior)
         {
-            throw new NotImplementedException();
+            var spell = new CurrentSpell();
+
+            spell.Name = "chop";
+            spell.Damage = warrior.WarriorDamage;
+
+            return spell;
         }
     }
 }

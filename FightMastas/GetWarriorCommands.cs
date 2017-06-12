@@ -48,8 +48,8 @@ namespace B4B
 
                 Program.GameTitle();
                 string actionSelect = $"SELECT ACTION FOR {warrior.PlayerName}";
-                string shieldSlam = $"SHIELD SLAM-- DAMAGE:{warrior.WarriorArmor} COOLDOWN: 2";
-                string maceSwing = $"MACE SWING-- DAMAGE:{warrior.WarriorDamage}";
+                string shieldSlam = $"SHIELD SLAM-- DAMAGE:{warrior.WarriorArmor} NO COOLDOWN";
+                string maceSwing = $"MACE SWING-- DAMAGE:{warrior.WarriorDamage} NO COOLDOWN";
                 string armorUp = $"ARMOR UP-- ARMOR:{warrior.ShieldArmor * 2}";
                 string hibernate = $"HIBERNATE-- HEAL FOR {warrior.WarriorHealthRegen*3} TAKE 50% DAMAGE REDUCTION FOR NEXT ROUND, COOLDOWN: 3";
                 Console.WriteLine("{0}", actionSelect);
@@ -106,7 +106,7 @@ namespace B4B
                     break;
                 case 2:
                     var maceSwing = new MaceSwing();
-                    currentSpell = maceSwing.GetMaceSwing();
+                    currentSpell = maceSwing.GetMaceSwing(warrior);
                     break;
                 case 3:
                     var armorUpSpell = new ArmorUp();
@@ -143,8 +143,8 @@ namespace B4B
                 string actionSelect = $"SELECT ACTION FOR {warrior.PlayerName}";
                 string levelUpCrit = $"CRITICAL STRIKE-- LOSE THIS TURN AND HAVE 30% CHANCE FOR 2X CRITICAL STRIKE FOR EACH ACTION YOUR SWORDMASTER DOES UNTIL END OF GAME";
                 string mirrorImage = $"MIRROR IMAGE-- YOUR OPONENT LOSES 1 TURN, YOU DEAL {warrior.WarriorDamage} TO HIM, COOLDOWN: 3";
-                string bladeSlash = $"BLADESLASH-- DAMAGE:{warrior.WarriorDamage * 2}";
-                string windFury = $"WINDFURY-- DAMAGE:{warrior.WarriorDamage * 5} COOLDOWN: 4";
+                string bladeSlash = $"BLADESLASH-- DAMAGE:{warrior.WarriorDamage * 2} NO COOLDOWN";
+                string windFury = $"WINDFURY-- DAMAGE:{warrior.WarriorDamage * 5}, BECOME INVULNERABLE FOR 1 TURN COOLDOWN: 4";
                 Console.WriteLine("{0}", actionSelect);
                 switch (counter)
                 {
@@ -204,7 +204,7 @@ namespace B4B
                     break;
                 case 2:
                     var mirrorImage = new MirrorImage();
-                    currentSpell = mirrorImage.GetMirrorImage();
+                    currentSpell = mirrorImage.GetMirrorImage(warrior);
                     break;
                 case 3:
                     var slash = new BladeSlash();
@@ -239,7 +239,7 @@ namespace B4B
                 Program.GameTitle();
                 string actionSelect = $"SELECT ACTION FOR {warrior.PlayerName}";
                 string goBerserk = $"BERSERK MODE-- DO DOUBLE DAMAGE FOR THREE ROUNDS, COST: 200HP, COOLDOWN: 5";
-                string axeChop = $"AXE CHOP-- DAMAGE:{warrior.WarriorDamage * 2}";
+                string axeChop = $"AXE CHOP-- DAMAGE:{warrior.WarriorDamage * 2}, NO COOLDOWN";
                 string wildAxes = $"WILD AXES-- DAMAGE:{warrior.WarriorDamage * 4}, COOLDOWN: 3";
                 string execute = $"EXECUTE-- KILL ENEMY IF HIS HP IS BELOW 300";
                 Console.WriteLine("{0}", actionSelect);

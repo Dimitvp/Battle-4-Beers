@@ -8,9 +8,14 @@ namespace B4B.ActionsWarrior
 {
     class MaceSwing
     {
-        internal CurrentSpell GetMaceSwing()
+        internal CurrentSpell GetMaceSwing(Warrior warrior)
         {
-            throw new NotImplementedException();
+            var spell = new CurrentSpell();
+
+            spell.Name = "maceswing";
+            spell.Damage = warrior.WarriorDamage;
+
+            return spell;
         }
     }
 }

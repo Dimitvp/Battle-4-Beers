@@ -10,7 +10,14 @@ namespace B4B.ActionsWarrior
     {
         internal CurrentSpell GetHibernate(Warrior warrior)
         {
-            throw new NotImplementedException();
+            var spell = new  CurrentSpell();
+
+            spell.Name = "hibernate";
+            spell.GetHP = warrior.WarriorHealthRegen * 3;
+            spell.DamageReduction = 0.5;
+            spell.Cooldown = 3;
+
+            return spell;
         }
     }
 }

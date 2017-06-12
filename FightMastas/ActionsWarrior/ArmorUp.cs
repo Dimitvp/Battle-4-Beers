@@ -12,6 +12,9 @@ namespace B4B.ActionsWarrior
         {
             var spell = new CurrentSpell();
 
+            spell.Name = "armorup";
+            spell.GetArmor = warrior.ShieldArmor * 2;
+
             return spell;
         }
     }
