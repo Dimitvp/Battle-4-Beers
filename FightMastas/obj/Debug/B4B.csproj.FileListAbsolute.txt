@@ -1,0 +1,6 @@
+C:\Users\ivail\Documents\Visual Studio 2015\Projects\FightMasters\FightMastas\bin\Debug\FightMastas.exe.config
+C:\Users\ivail\Documents\Visual Studio 2015\Projects\FightMasters\FightMastas\bin\Debug\FightMastas.exe
+C:\Users\ivail\Documents\Visual Studio 2015\Projects\FightMasters\FightMastas\bin\Debug\FightMastas.pdb
+C:\Users\ivail\Documents\Visual Studio 2015\Projects\FightMasters\FightMastas\obj\Debug\B4B.csprojResolveAssemblyReference.cache
+C:\Users\ivail\Documents\Visual Studio 2015\Projects\FightMasters\FightMastas\obj\Debug\FightMastas.exe
+C:\Users\ivail\Documents\Visual Studio 2015\Projects\FightMasters\FightMastas\obj\Debug\FightMastas.pdb

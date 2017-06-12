@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FightMastas.ActionsWarrior
+namespace B4B.ActionsWarrior
 {
     class Berserk
     {

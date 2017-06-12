@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FightMastas.Spells;
+using B4B.Spells;
 
-namespace FightMastas 
+namespace B4B 
 {
     class ExecuteMageCommands
     {

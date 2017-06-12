@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FightMastas.ActionsWarrior;
+using B4B.ActionsWarrior;
 
 
-namespace FightMastas
+namespace B4B
 {
     class GetWarriorCommands
     {

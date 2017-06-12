@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FightMastas.Spells
+namespace B4B.Spells
 {
     public class Amplifier
     {
