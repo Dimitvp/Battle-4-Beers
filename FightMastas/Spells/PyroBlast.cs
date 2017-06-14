@@ -12,7 +12,7 @@ namespace B4B.Spells
         {
             var currentSpell = new CurrentSpell();
 
-            currentSpell.Name = "pyroblast";
+            currentSpell.Name = "PYRO BLAST";
             currentSpell.Damage = mage.MageSpellPower * 5;
             currentSpell.Cooldown = 4;
             currentSpell.ManaCost = 250;

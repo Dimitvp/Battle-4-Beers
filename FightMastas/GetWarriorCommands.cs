@@ -48,10 +48,10 @@ namespace B4B
 
                 Program.GameTitle();
                 string actionSelect = $"SELECT ACTION FOR {warrior.PlayerName}";
-                string shieldSlam = $"SHIELD SLAM-- DAMAGE:{warrior.WarriorArmor} NO COOLDOWN";
-                string maceSwing = $"MACE SWING-- DAMAGE:{warrior.WarriorDamage} NO COOLDOWN";
-                string armorUp = $"ARMOR UP-- ARMOR:{warrior.ShieldArmor * 2}";
-                string hibernate = $"HIBERNATE-- HEAL FOR {warrior.WarriorHealthRegen*3} TAKE 50% DAMAGE REDUCTION FOR NEXT ROUND, COOLDOWN: 3";
+                string shieldSlam = $"SHIELD SLAM-- DEAL {warrior.WarriorArmor} DAMAGE, STUN OPPONENT FOR HIS TURN, COOLDOWN: 2";
+                string maceSwing = $"MACE SWING-- DAMAGE:{warrior.WarriorDamage * 1.5}, NO COOLDOWN";
+                string armorUp = $"ARMOR UP-- GAIN {warrior.ShieldArmor * 2} ARMOR, NO COOLDOWN";
+                string hibernate = $"HIBERNATE-- HEAL FOR {warrior.WarriorHealthRegen*4}, TAKE 50% DAMAGE REDUCTION FOR OPPONENT'S TURN, COOLDOWN: 3";
                 Console.WriteLine("{0}", actionSelect);
                 switch (counter)
                 {
@@ -60,19 +60,29 @@ namespace B4B
                         Console.WriteLine("{0,2}", "-> " + shieldSlam);
                         Console.WriteLine("{0,2}", maceSwing);
                         Console.WriteLine("{0,2}", armorUp);
-                        Console.WriteLine("{0,2}", hibernate);break;
+                        Console.WriteLine("{0,2}", hibernate);
+                        break;
                     case 2:
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("{0,2}", shieldSlam);
                         Console.WriteLine("{0,2}", "-> " + maceSwing);
                         Console.WriteLine("{0,2}", armorUp);
-                        Console.WriteLine("{0,2}", hibernate); break;
+                        Console.WriteLine("{0,2}", hibernate);
+                        break;
                     case 3:
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine("{0,2}", shieldSlam);
                         Console.WriteLine("{0,2}", maceSwing);
                         Console.WriteLine("{0,2}", "-> " + armorUp);
-                        Console.WriteLine("{0,2}", hibernate); break;
+                        Console.WriteLine("{0,2}", hibernate);
+                        break;
+                    case 4:
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine("{0,2}", shieldSlam);
+                        Console.WriteLine("{0,2}", maceSwing);
+                        Console.WriteLine("{0,2}",  armorUp);
+                        Console.WriteLine("{0,2}", "-> " + hibernate);
+                        break;
                     default:
                         if (counter == 5)
                         {
@@ -144,7 +154,7 @@ namespace B4B
                 string levelUpCrit = $"CRITICAL STRIKE-- LOSE THIS TURN AND HAVE 30% CHANCE FOR 2X CRITICAL STRIKE FOR EACH ACTION YOUR SWORDMASTER DOES UNTIL END OF GAME";
                 string mirrorImage = $"MIRROR IMAGE-- YOUR OPONENT LOSES 1 TURN, YOU DEAL {warrior.WarriorDamage} TO HIM, COOLDOWN: 3";
                 string bladeSlash = $"BLADESLASH-- DAMAGE:{warrior.WarriorDamage * 2} NO COOLDOWN";
-                string windFury = $"WINDFURY-- DAMAGE:{warrior.WarriorDamage * 5}, BECOME INVULNERABLE FOR 1 TURN COOLDOWN: 4";
+                string windFury = $"WINDFURY-- DAMAGE:{warrior.WarriorDamage * 5} COOLDOWN: 4";
                 Console.WriteLine("{0}", actionSelect);
                 switch (counter)
                 {
@@ -155,6 +165,7 @@ namespace B4B
                         Console.WriteLine("{0,2}",  bladeSlash);
                         Console.WriteLine("{0,2}", windFury); break;
                     case 2:
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("{0,2}",  levelUpCrit);
                         Console.WriteLine("{0,2}", "-> " + mirrorImage);
                         Console.WriteLine("{0,2}", bladeSlash);
@@ -238,7 +249,7 @@ namespace B4B
 
                 Program.GameTitle();
                 string actionSelect = $"SELECT ACTION FOR {warrior.PlayerName}";
-                string goBerserk = $"BERSERK MODE-- DO DOUBLE DAMAGE FOR THREE ROUNDS, COST: 200HP, COOLDOWN: 5";
+                string goBerserk = $"BERSERK MODE-- DO DOUBLE DAMAGE FOR 3 ROUNDS, COST: 200HP, COOLDOWN: 5";
                 string axeChop = $"AXE CHOP-- DAMAGE:{warrior.WarriorDamage * 2}, NO COOLDOWN";
                 string wildAxes = $"WILD AXES-- DAMAGE:{warrior.WarriorDamage * 4}, COOLDOWN: 3";
                 string execute = $"EXECUTE-- KILL ENEMY IF HIS HP IS BELOW 300";

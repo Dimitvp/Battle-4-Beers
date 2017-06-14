@@ -13,8 +13,7 @@ namespace B4B.ActionsWarrior
             var spell = new  CurrentSpell();
 
             spell.Name = "hibernate";
-            spell.GetHP = warrior.WarriorHealthRegen * 3;
-            spell.DamageReduction = 0.5;
+            spell.GetHP = warrior.WarriorHealthRegen * 4;
             spell.Cooldown = 3;
 
             return spell;

@@ -11,118 +11,13 @@ namespace B4B
         //Cooldown checker for warriors
         public static bool CheckCoolDownWarr(Warrior warrior, CurrentSpell spell)
         {
-            warrior.BerserkModeCooldown--;
-            warrior.DoubleAttackCooldown--;
-            warrior.ArmorUpCooldown--;
-            warrior.ShieldSlamCooldown--;
-            warrior.WindFuryCooldown--;
-
-            if (spell.Name == "berserk")
+            if (warrior.Type == "swordmaster")
             {
-                if(!warrior.BerserkModeIsCD)
+                if(spell.Name == "WINDFURY")
                 {
-                    warrior.BerserkModeIsCD = true;
-                    warrior.BerserkModeCooldown = spell.Cooldown;
-                    return false;
-                }
-                else
-                {
-                    
-                    if(warrior.BerserkModeCooldown <= 0)
+                    if(warrior.WindFuryCooldown <= 0)
                     {
-                        warrior.BerserkModeCooldown = spell.Cooldown;
-                        warrior.BerserkModeIsCD = true;
-                        return false;
-                    }
-                    else
-                    {
-                        return true;
-                    }
-                }
-            }
-            else if (spell.Name == "dual")
-            {
-                if (!warrior.DoubleAttackIsCD)
-                {
-                    warrior.DoubleAttackIsCD = true;
-                    warrior.DoubleAttackCooldown = 2;
-                    return false;
-                }
-                else
-                {
-                    warrior.DoubleAttackCooldown--;
-                    if (warrior.DoubleAttackCooldown <= spell.Cooldown)
-                    {
-                        warrior.DoubleAttackIsCD = true;
-                        warrior.DoubleAttackCooldown = spell.Cooldown;
-                        return false;
-                    }
-                    else
-                    {
-                        return true;
-                    }
-                }
-            }
-            else if (spell.Name == "dual")
-            {
-                if (!warrior.ShieldSlamIsCD)
-                {
-                    warrior.ShieldSlamIsCD = true;
-                    warrior.ShieldSlamCooldown = spell.Cooldown;
-                    return false;
-                }
-                else
-                {
-                    warrior.ShieldSlamCooldown--;
-                    if (warrior.ShieldSlamCooldown <= 0)
-                    {
-                        warrior.DoubleAttackIsCD = true;
-                        warrior.ShieldSlamCooldown = spell.Cooldown;
-                        return false;
-                    }
-                    else
-                    {
-                        return true;
-                    }
-                }
-            }
-            else if (spell.Name == "armor")
-            {
-                if (!warrior.ArmorUpIsCD)
-                {
-                    warrior.ArmorUpIsCD = true;
-                    warrior.ArmorUpCooldown = spell.Cooldown;
-                    return false;
-                }
-                else
-                {
-                    warrior.ArmorUpCooldown--;
-                    if (warrior.ArmorUpCooldown <= 0)
-                    {
-                        warrior.ArmorUpIsCD = true;
-                        warrior.ArmorUpCooldown = spell.Cooldown;
-                        return false;
-                    }
-                    else
-                    {
-                        return true;
-                    }
-                }
-            }
-            else if (spell.Name == "windfury")
-            {
-                if (!warrior.WindFuryIsCd)
-                {
-                    warrior.WindFuryIsCd = true;
-                    warrior.WindFuryCooldown = spell.Cooldown;
-                    return false;
-                }
-                else
-                {
-                    warrior.WindFuryCooldown--;
-                    if (warrior.WindFuryCooldown <= 0)
-                    {
-                        warrior.WindFuryIsCd = true;
+                        warrior.MirrorImageCooldown--;
                         warrior.WindFuryCooldown = spell.Cooldown;
                         return false;
                     }
@@ -131,16 +26,103 @@ namespace B4B
                         return true;
                     }
                 }
+                else if(spell.Name == "mirrorimage")
+                {
+                    if(warrior.MirrorImageCooldown <= 0)
+                    {
+                        warrior.WindFuryCooldown--;
+                        warrior.MirrorImageCooldown = spell.Cooldown;
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+                else if(spell.Name == "BLADE SLASH")
+                {
+                    warrior.WindFuryCooldown--;
+                    warrior.MirrorImageCooldown--;
+                    return false;
+                }
+                else if(spell.Name == "critical")
+                {
+                    warrior.WindFuryCooldown--;
+                    warrior.MirrorImageCooldown--;
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
-            else if(spell.Name == "slash")
+            else if(warrior.Type == "berserker")
             {
-                return false;
+                if (spell.Name == "AXE CHOP")
+                {
+                        warrior.BerserkModeCooldown--;
+                        warrior.WildAxesCooldown--;
+                        return false;
+                }
+                else if (spell.Name == "berserk")
+                {
+                    if (warrior.BerserkModeCooldown <= 0)
+                    {
+                        warrior.WildAxesCooldown--;
+                        warrior.BerserkModeCooldown = spell.Cooldown;
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+                else if (spell.Name == "WILD AXES")
+                {
+                    if(warrior.WildAxesCooldown <= 0)
+                    {
+                        warrior.BerserkModeCooldown--;
+                        warrior.WildAxesCooldown = spell.Cooldown;
+                        return false;
+                    }
+                }
+                else
+                {
+                    return true;
+                }
             }
             else
             {
-                return false;
+                if (spell.Name == "armorup")
+                {
+                    warrior.HibernateCooldown--;
+                    return false;
+                }
+                else if (spell.Name == "MACE SWING")
+                {
+                    warrior.HibernateCooldown--;
+                    return false;
+                }
+                else if(spell.Name == "hibernate")
+                {
+                    if(warrior.HibernateCooldown <= 0)
+                    {
+                        warrior.HibernateCooldown = 3;
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+                else
+                {
+                    warrior.HibernateCooldown--;
+                    return false;
+                }
             }
 
+            return true;
         }
 
         //Cooldown checker for mages
@@ -162,7 +144,7 @@ namespace B4B
                         return true;
                     }
                 }
-                else if(spell.Name == "fireblast")
+                else if(spell.Name == "FIRE BLAST")
                 {
                     mage.FireArmorCoolDown--;
                     mage.PyroBlastCoolDown--;

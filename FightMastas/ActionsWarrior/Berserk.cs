@@ -14,7 +14,6 @@ namespace B4B.ActionsWarrior
 
             spell.Name = "berserk";
             spell.SacrificialHP = 200;
-            spell.AmplifyRatio = 2;
             spell.Cooldown = 5;
             spell.Duration = 3;
 

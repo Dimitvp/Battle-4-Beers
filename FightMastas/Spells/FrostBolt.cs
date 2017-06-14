@@ -12,10 +12,9 @@ namespace B4B.Spells
         {
             var spell = new CurrentSpell();
 
-            spell.Name = "frostbolt";
+            spell.Name = "FROST BOLT";
             spell.FrostArmor = true;
             spell.Damage = mage.MageSpellPower * 2;
-            spell.Duration = 2;
             spell.ManaCost = 150;
 
             return spell;

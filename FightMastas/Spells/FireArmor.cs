@@ -16,7 +16,7 @@ namespace B4B.Spells
             spell.GetArmor = 100;
             spell.Damage = mage.MageSpellPower / 2;
             spell.Cooldown = 3;
-            spell.Duration = 4;
+            spell.ManaCost = 80;
 
             return spell;
         }

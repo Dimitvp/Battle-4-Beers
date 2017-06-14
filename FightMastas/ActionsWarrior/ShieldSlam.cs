@@ -12,7 +12,7 @@ namespace B4B.ActionsWarrior
         {
             var spell = new CurrentSpell();
 
-            spell.Name = "shieldslam";
+            spell.Name = "SHIELD SLAM";
             spell.Damage = warrior.WarriorArmor;
 
             return spell;

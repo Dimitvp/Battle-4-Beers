@@ -13,8 +13,9 @@ namespace B4B.Spells
             var spell = new CurrentSpell();
 
             spell.Name = "frozenground";
-            spell.Duration = 2;
             spell.Damage = mage.MageSpellPower;
+            spell.ManaCost = 150;
+            spell.Cooldown = 4;
 
             return spell;
         }

@@ -7,9 +7,9 @@ using B4B.Spells;
 
 namespace B4B 
 {
-    class ExecuteMageCommands
+    class GetMageCommands
     {
-        public static CurrentSpell ClassChecker(Mage mage, Warrior warr)
+        public static CurrentSpell ClassChecker(Mage mage)
         {
             var currentSpell = new CurrentSpell();
             if (mage.Type == "frost")
@@ -18,7 +18,7 @@ namespace B4B
             }
             else if (mage.Type == "fire")
             {
-                currentSpell = FireMageCommands(mage, warr);
+                currentSpell = FireMageCommands(mage);
             }
             else
             {
@@ -47,9 +47,9 @@ namespace B4B
 
                 Program.GameTitle();
                 string actionSelect = $"SELECT ACTION FOR {mage.PlayerName}";
-                string polymorph = $"POLYMORPH-- DISABLE TARGET FOR 1 TURN, COST: 100 MANA, COOLDOWN: 3";
+                string polymorph = $"POLYMORPH-- DISABLE TARGET FOR 2 TURNS, COST: 200 MANA, COOLDOWN: 4";
                 string arcaneBlast = $"ARCANE BLAST-- DAMAGE:{mage.MageSpellPower * 3}, COST: 90 MANA, , NO COOLDOWN";
-                string amplifier = $"AMPLIFY SPELL DAMAGE-- DOUBLE SPELL DAMAGE FOR 3 TURNS, COST: 250 MANA, COOLDOWN: 4";
+                string amplifier = $"AMPLIFY MAGIC-- DOUBLE SPELL DAMAGE FOR 3 TURNS, COST: 250 MANA, COOLDOWN: 4";
                 string manaRegen = $"MANA REGENERATION-- GET 300 MANA, COOLDOWN: 3";
                 Console.WriteLine("{0}", actionSelect);
                 switch (counter)
@@ -114,8 +114,8 @@ namespace B4B
                     currentSpell = arcaneBlast.GetArcaneBlast(mage);
                     break;
                 case 3:
-                    var amplifier = new ArcaneBlast();
-                    currentSpell = amplifier.GetArcaneBlast(mage);
+                    var amplifier = new Amplifier();
+                    currentSpell = amplifier.GetAmplifier(mage);
                     break;
                 default:
                     var manaReg = new ManaRegeneration();
@@ -127,7 +127,7 @@ namespace B4B
 
         }
 
-        private static CurrentSpell FireMageCommands(Mage mage, Warrior warr)
+        private static CurrentSpell FireMageCommands(Mage mage)
         {
             ConsoleKeyInfo enter = new ConsoleKeyInfo();
             Console.Clear();
@@ -147,7 +147,7 @@ namespace B4B
                 Program.GameTitle();
                 string actionSelect = $"SELECT ACTION FOR {mage.PlayerName}";
                 string fireBlast = $"FIRE BLAST-- DAMAGE:{mage.MageSpellPower * 2} COST: 120 MANA, NO COOLDOWN";
-                string fireArmor = $"FIRE ARMOR-- GET 100 ARMOR AND DAMAGE PHYSICAL ATTACKERS FOR {mage.MageSpellPower / 2} FOR 4 TURNS, COST: 80 MANA, COOLDOWN: 3 ROUNDS, NON-STACKABLE";
+                string fireArmor = $"FIRE ARMOR-- GET 100 ARMOR AND DAMAGE PHYSICAL ATTACKERS FOR {mage.MageSpellPower} FOR 2 TURNS, COST: 80 MANA, COOLDOWN: 3";
                 string pyroBlast = $"PYRO BLAST-- DAMAGE:{mage.MageSpellPower * 5} COST: 250 MANA, COOLDOWN: 4";
                 string incinerate = $"INCINERATE-- KILL ENEMY IF ENEMY HP IS BELOW 350";
                 Console.WriteLine("{0}", actionSelect);
@@ -245,9 +245,9 @@ namespace B4B
                 Program.GameTitle();
                 string actionSelect = $"SELECT ACTION FOR {mage.PlayerName}"; 
                 string frostArmor = $"FROST ARMOR-- GET 150 ARMOR, LOWER PHYSICAL DAMAGE BY 20% FOR 2 TURNS, COST: 100 MANA, COOLDOWN: 3";
-                string frostBolt = $"FROST BOLT-- DAMAGE ENEMY FOR {mage.MageSpellPower * 2}, LOWER ENEMY PHYSICAL DAMAGE DONE BY 20% FOR 2 TURNS, COST: 150 MANA, COOLDOWN: 2";
+                string frostBolt = $"FROST BOLT-- DAMAGE ENEMY FOR {mage.MageSpellPower * 2}, LOWER ENEMY PHYSICAL DAMAGE DONE BY 20% FOR 2 TURNS, COST: 90 MANA, NO COOLDOWN";
                 string icyVeins = $"ICY VEINS-- LOWER COOLDOWN ON ALL SPELLS BY 1 TURN, GET 50% MORE SPELLPOWER FOR 3 TURNS, COST: 250 MANA, COOLDOWN: 4";
-                string frozenGround = $"FROZEN GROUND-- STUN ENEMY FOR 1 TURN AND DAMAGE FOR 2 TURNS BY {mage.MageSpellPower}, COST: 150 MANA, COOLDOWN: 3";
+                string frozenGround = $"FROZEN GROUND-- STUN ENEMY FOR 1 TURN AND DAMAGE HIM FOR 2 TURNS BY {mage.MageSpellPower}, COST: 150 MANA, COOLDOWN: 4";
                 Console.WriteLine("{0}", actionSelect);
                 switch (counter)
                 {

@@ -8,14 +8,17 @@ namespace B4B.Spells
 {
     public class Polymorph
     {
+        public int Duration = 2;
+        public int Cooldown = 4;
+
         public CurrentSpell GetPolymorph(Mage mage)
         {
             var spell = new CurrentSpell();
 
             spell.Name = "polymorph";
-            spell.DisableDuration = 1;
             spell.ManaCost = 100;
-            spell.Cooldown = 3;
+            spell.Cooldown = 4;
+            
             return spell;
         }
     }

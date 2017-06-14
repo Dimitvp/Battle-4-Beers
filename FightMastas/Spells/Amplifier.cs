@@ -13,8 +13,8 @@ namespace B4B.Spells
             var spell = new CurrentSpell();
 
             spell.Name = "amplifier";
-            spell.AmplifyRatio = 2;
             spell.Cooldown = 4;
+            spell.Duration = 3;
             spell.ManaCost = 250;
 
             return spell;

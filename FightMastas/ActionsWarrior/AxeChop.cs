@@ -12,7 +12,7 @@ namespace B4B.ActionsWarrior
         {
             var spell = new CurrentSpell();
 
-            spell.Name = "chop";
+            spell.Name = "AXE CHOP";
             spell.Damage = warrior.WarriorDamage;
 
             return spell;

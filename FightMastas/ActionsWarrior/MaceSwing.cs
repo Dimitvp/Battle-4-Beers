@@ -12,8 +12,8 @@ namespace B4B.ActionsWarrior
         {
             var spell = new CurrentSpell();
 
-            spell.Name = "maceswing";
-            spell.Damage = warrior.WarriorDamage;
+            spell.Name = "MACE SWING";
+            spell.Damage = warrior.WarriorDamage * 1.5;
 
             return spell;
         }

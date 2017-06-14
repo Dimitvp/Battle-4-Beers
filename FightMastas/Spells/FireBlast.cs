@@ -12,7 +12,7 @@ namespace B4B.Spells
         {
             var spell = new CurrentSpell();
 
-            spell.Name = "fireblast";
+            spell.Name = "FIRE BLAST";
             spell.Damage = mage.MageSpellPower * 2;
             spell.ManaCost = 120;
 

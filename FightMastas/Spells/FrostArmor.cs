@@ -15,7 +15,6 @@ namespace B4B.Spells
             spell.Name = "frostarmor";
             spell.GetArmor = 150;
             spell.FrostArmor = true;
-            spell.Duration = 2;
             spell.Cooldown = 3;
             spell.ManaCost = 100;
 

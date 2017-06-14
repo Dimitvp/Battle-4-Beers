@@ -12,7 +12,7 @@ namespace B4B.ActionsWarrior
         {
             var spell = new CurrentSpell();
 
-            spell.Name = "slash";
+            spell.Name = "BLADE SLASH";
             spell.Damage = warrior.WarriorDamage * 2;
 
             return spell;

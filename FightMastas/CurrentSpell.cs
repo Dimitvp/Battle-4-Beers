@@ -10,11 +10,11 @@ namespace B4B
     {
         public string Name { get; set; }
 
+        public string CritHit { get; set; }
+
         public double Damage { get; set; }
 
         public int ManaCost { get; set; }
-
-        public double DamageReduction { get; set; }
 
         public int Cooldown { get; set; }
 
@@ -22,20 +22,13 @@ namespace B4B
 
         public int SacrificialHP { get; set; }
 
-        public double AmplifyRatio { get; set; }
-
         public bool Execution { get; set; }
-
-        public int DisableDuration { get; set; }
 
         public int GetMana { get; set; }
 
         public int GetHP { get; set; }
 
         public int GetArmor { get; set; }
-
-        public bool IsPhysical { get; set; }
-
         public bool FrostArmor { get; set; }
     }
 }

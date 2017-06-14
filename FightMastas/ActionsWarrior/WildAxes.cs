@@ -12,7 +12,7 @@ namespace B4B.ActionsWarrior
         {
             var spell = new CurrentSpell();
 
-            spell.Name = "wildaxes";
+            spell.Name = "WILD AXES";
             spell.Damage = warrior.WarriorDamage * 4;
             spell.Cooldown = 3;
 

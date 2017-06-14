@@ -8,13 +8,16 @@ namespace B4B
 {
     public class Warrior
     {
+        //Warrior stats
         public string PlayerName;
 
         public string Type;
 
+        public bool OnTurn { get; set; }
+
         public double WarriorDamage = 50;
 
-        public int WarriorHealth = 1300;
+        public int WarriorHealth = 1500;
 
         public int WarriorArmor { get; set; }
 
@@ -22,27 +25,28 @@ namespace B4B
 
         public int ShieldArmor = 100;
 
-        public bool Invulnerable = false;
+        public bool DamageReduction = false;
+        
 
-        public bool CriticalStrike = false;
 
-        public int ShieldSlamCooldown { get; set; }
-        public bool ShieldSlamIsCD  { get; set; }
-
-        public int WindFuryCooldown { get; set; }
-        public bool WindFuryIsCd { get; set; }
-
-        public int DoubleAttackCooldown { get; set; }
-        public bool DoubleAttackIsCD { get; set; }
+        //Spells Cooldowns
+        //Berserker spells
+        public int WildAxesCooldown { get; set; }
 
         public int BerserkModeCooldown { get; set; }
-        public bool BerserkModeIsCD { get; set; }
 
+        //Swordmaster spells
+        public int MirrorImageCooldown { get; set; }
+
+        public int WindFuryCooldown { get; set; }
+
+        public bool CriticalStrike { get; set; }
+
+        //Protector spells
         public int ArmorUpCooldown { get; set; }
-        public bool ArmorUpIsCD = false;
 
+        public int HibernateCooldown { get; set; }
 
-
-
+        public bool ArmorEquipped { get; set; }
     }
 }

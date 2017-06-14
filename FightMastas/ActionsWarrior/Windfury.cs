@@ -12,7 +12,7 @@ namespace B4B.ActionsWarrior
         {
             var spell = new CurrentSpell();
 
-            spell.Name = "windfury";
+            spell.Name = "WINDFURY";
             spell.Damage = warrior.WarriorDamage * 5;
             spell.Cooldown = 4;
 

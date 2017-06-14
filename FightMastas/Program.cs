@@ -349,9 +349,9 @@ namespace B4B
                 switch (counter)
                 {
                     case 1:
-                        return "berserker";
+                         return "swordmaster";
                     case 2:
-                        return "swordmaster";
+                        return "berserker";
                     default:
                         return "protector";
                 }
@@ -438,7 +438,7 @@ namespace B4B
 
             var coin = new Random();
 
-            int player = coin.Next(1, 10);
+            int player = coin.Next(1, 11);
 
             if (player % 2 == 1)
             {
@@ -471,7 +471,7 @@ namespace B4B
             {
                 var firstPlayerChar = new Mage { PlayerName = firstPlayer, Type = roles[firstPlayer]};
                 var secondPlayerChar = new Warrior { PlayerName = secondPlayer, Type = roles[secondPlayer] };
-                GameStart.GameStartMW(firstPlayerChar, secondPlayerChar);
+                GameStart.GameStartMW(secondPlayerChar, firstPlayerChar);
             }
             else if (mageClasses.Contains(roles[firstPlayer]) && mageClasses.Contains(roles[secondPlayer]))
             {

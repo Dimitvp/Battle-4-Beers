@@ -11,15 +11,17 @@ namespace B4B
         //Hero stats
         public string PlayerName { get; set; }
 
+        public bool OnTurn { get; set; }
+
         public string Type { get; set; }
 
         public double MageDamage = 20;
 
-        public int MageHealth = 800;
+        public int MageHealth = 1100;
 
-        public int FrostArmor = 0;
+        public int Armor = 0;
 
-        public int MageMana = 900;
+        public int MageMana = 2000;
 
         public int MageHealthRegen = 50;
 
@@ -33,8 +35,15 @@ namespace B4B
         public int FrozenGroundCoolDown { get; set; }
 
         public int IcyVeinsCoolDown { get; set; }
+        public bool FrostAmplified { get; set; }
+        
+
 
         public int FrostArmorCoolDown { get; set; }
+
+
+        public bool FrostReduction { get; set; }
+        public int FrostReductionDuration { get; set; }
 
         //Fire Mage
         public int PyroBlastCoolDown { get; set; }
@@ -43,9 +52,11 @@ namespace B4B
 
         //Arcane Mage
         public int AmplifierCoolDown { get; set; }
+        public bool ArcaneAmplified { get; set; }
+        public int ArcaneAmplifierDuration { get; set; }
 
-        public int ManaRegCoolDown = 4;
+        public int ManaRegCoolDown { get; set; }
 
-        public int PolymorphCoolDown = 4;
+        public int PolymorphCoolDown { get; set; }
     }
 }

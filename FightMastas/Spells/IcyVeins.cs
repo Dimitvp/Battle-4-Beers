@@ -14,7 +14,6 @@ namespace B4B.Spells
 
             spell.Name = "icyveins";
             spell.Cooldown = 4;
-            spell.AmplifyRatio = 1.5;
             spell.Duration = 3;
             spell.ManaCost = 250;
 
