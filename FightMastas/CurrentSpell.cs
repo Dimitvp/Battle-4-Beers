@@ -29,6 +29,24 @@ namespace B4B
         public int GetHP { get; set; }
 
         public int GetArmor { get; set; }
-        public bool FrostArmor { get; set; }
+        public bool FrostArmor = false;
+        public double Amplifier { get; set; }
+
+        public static bool SpellsExceptional(CurrentSpell spell)
+        {
+            List<string> spells = new List<string>() { "mirrorimage", "SHIELD SLAM", "polymorph", "frozenground"
+            , "manaregeneration", "icyveins", "amplifier", "hibernate", "frostarmor", "firearmor", "critical", "berserk",
+        "armorup"};
+
+            if(spells.Contains(spell.Name))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+         
     }
 }

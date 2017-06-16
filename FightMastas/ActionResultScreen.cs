@@ -9,37 +9,23 @@ namespace B4B
 {
     public class ActionResultScreen
     {
-        public static void GoToActionResultScreenWM(Warrior warr, Mage mage, CurrentSpell spell)
+        public static void GoToActionResultScreen(Player warr, Player mage, CurrentSpell spell)
         {
-            if(warr.OnTurn)
-            {
                 var enter = new ConsoleKeyInfo();
                 Console.Clear();
-                while (enter.Key != ConsoleKey.Enter)
-                {
-                    Console.WriteLine($"PLAYER {warr.PlayerName} USED {spell.Name} ON {mage.PlayerName} FOR {spell.Damage} DAMAGE {spell.CritHit}");
-                    PrintCharacterStats.PrintWM(mage, warr);
-                    enter = Console.ReadKey();
-                    Console.Clear();
-                }
-            }
-            else
+            while (enter.Key != ConsoleKey.Enter)
             {
-                var enter = new ConsoleKeyInfo();
+                Console.WriteLine($"PLAYER {warr.Name} USED {spell.Name} ON {mage.Name} FOR {spell.Damage} DAMAGE {spell.CritHit}");
+                Console.WriteLine();
+                PrintCharacterStats.Print(mage, warr);
+                enter = Console.ReadKey();
                 Console.Clear();
-                while (enter.Key != ConsoleKey.Enter)
-                {
-                    Console.WriteLine($"PLAYER {mage.PlayerName} USED {spell.Name} ON {warr.PlayerName} FOR {spell.Damage} DAMAGE");
-                    PrintCharacterStats.PrintWM(mage, warr);
-                    enter = Console.ReadKey();
-                    Console.Clear();
-                }
             }
         }
 
-        internal static void GoToActionResultScreenWMExceptions(Warrior warr, Mage mage, CurrentSpell spell)
+        internal static void GoToActionResultScreenExceptions(Player warr, Player mage, CurrentSpell spell)
         {
-            if(warr.OnTurn)
+            if(warr.Hero == "warrior")
             {
                 if(spell.Name == "hibernate" || spell.Name == "armorup" || spell.Name == "SHIELD SLAM")
                 {
@@ -49,8 +35,9 @@ namespace B4B
                         Console.Clear();
                         while (enter.Key != ConsoleKey.Enter)
                         {
-                            Console.WriteLine($"{warr.PlayerName} USED ARMOR UP AND GAINED 200 ARMOR");
-                            PrintCharacterStats.PrintWM(mage, warr);
+                            Console.WriteLine($"{warr.Name} USED ARMOR UP AND GAINED 200 ARMOR");
+                            Console.WriteLine();
+                            PrintCharacterStats.Print(mage, warr);
                             enter = Console.ReadKey();
                             Console.Clear();
                         }
@@ -61,9 +48,10 @@ namespace B4B
                         Console.Clear();
                         while (enter.Key != ConsoleKey.Enter)
                         {
-                            Console.WriteLine($"{warr.PlayerName} USED HIBERNATE AND HEALED FOR {warr.WarriorHealthRegen *4}");
-                            Console.WriteLine($"{warr.PlayerName} GAINED 50% DAMAGE REDUCTION FOR OPPONENT'S TURN");
-                            PrintCharacterStats.PrintWM(mage, warr);
+                            Console.WriteLine($"{warr.Name} USED HIBERNATE AND HEALED FOR {warr.HealthRegen *4}");
+                            Console.WriteLine($"{warr.Name} GAINED 50% DAMAGE REDUCTION FOR OPPONENT'S TURN");
+                            Console.WriteLine();
+                            PrintCharacterStats.Print(mage, warr);
                             enter = Console.ReadKey();
                             Console.Clear();
                         }
@@ -74,9 +62,10 @@ namespace B4B
                         Console.Clear();
                         while (enter.Key != ConsoleKey.Enter)
                         {
-                            Console.WriteLine($"{warr.PlayerName} USED {spell.Name} ON {mage.PlayerName} FOR {spell.Damage}");
-                            Console.WriteLine($"{mage.PlayerName} LOSES HIS TURN");
-                            PrintCharacterStats.PrintWM(mage, warr);
+                            Console.WriteLine($"{warr.Name} USED {spell.Name} ON {mage.Name} FOR {spell.Damage} DAMAGE");
+                            Console.WriteLine($"{mage.Name} LOSES HIS TURN");
+                            Console.WriteLine();
+                            PrintCharacterStats.Print(mage, warr);
                             enter = Console.ReadKey();
                             Console.Clear();
                         }
@@ -90,8 +79,9 @@ namespace B4B
                         Console.Clear();
                         while (enter.Key != ConsoleKey.Enter)
                         {
-                            Console.WriteLine($"{warr.PlayerName} LEVELED UP HIS CRITICAL STRIKE");
-                            PrintCharacterStats.PrintWM(mage, warr);
+                            Console.WriteLine($"{warr.Name} LEVELED UP HIS CRITICAL STRIKE");
+                            Console.WriteLine();
+                            PrintCharacterStats.Print(mage, warr);
                             enter = Console.ReadKey();
                             Console.Clear();
                         }
@@ -102,9 +92,10 @@ namespace B4B
                         Console.Clear();
                         while (enter.Key != ConsoleKey.Enter)
                         {
-                            Console.WriteLine($"{warr.PlayerName} USED MIRROR IMAGE ON {mage.PlayerName} FOR {spell.Damage} DAMAGE {spell.CritHit}");
-                            Console.WriteLine($"{mage.PlayerName} LOSES 1 TURN"); 
-                            PrintCharacterStats.PrintWM(mage, warr);
+                            Console.WriteLine($"{warr.Name} USED MIRROR IMAGE ON {mage.Name} FOR {spell.Damage} DAMAGE {spell.CritHit}");
+                            Console.WriteLine($"{mage.Name} LOSES 1 TURN");
+                            Console.WriteLine();
+                            PrintCharacterStats.Print(mage, warr);
                             enter = Console.ReadKey();
                             Console.Clear();
                         }
@@ -115,8 +106,9 @@ namespace B4B
                         Console.Clear();
                         while (enter.Key != ConsoleKey.Enter)
                         {
-                            Console.WriteLine($"{warr.PlayerName} HAS GONE BERSERK LOSING 200 HP WHILE GAINING DOUBLE DAMAGE FOR 3 ROUNDS");
-                            PrintCharacterStats.PrintWM(mage, warr);
+                            Console.WriteLine($"{warr.Name} HAS GONE BERSERK LOSING 200 HP WHILE GAINING DOUBLE DAMAGE FOR 3 ROUNDS");
+                            Console.WriteLine();
+                            PrintCharacterStats.Print(mage, warr);
                             enter = Console.ReadKey();
                             Console.Clear();
                         }
@@ -133,9 +125,10 @@ namespace B4B
                         Console.Clear();
                         while (enter.Key != ConsoleKey.Enter)
                         {
-                            Console.WriteLine($"{mage.PlayerName} USED FROST ARMOR AND GAINED 150 ARMOR");
-                            Console.WriteLine($"{mage.PlayerName} GAINED 20% PHYSICAL DAMAGE REDUCTION FOR 2 ROUNDS");
-                            PrintCharacterStats.PrintWM(mage, warr);
+                            Console.WriteLine($"{mage.Name} USED FROST ARMOR AND GAINED 150 ARMOR");
+                            Console.WriteLine($"{mage.Name} GAINED 20% PHYSICAL DAMAGE REDUCTION FOR 2 ROUNDS");
+                            Console.WriteLine();
+                            PrintCharacterStats.Print(mage, warr);
                             enter = Console.ReadKey();
                             Console.Clear();
                         }
@@ -146,9 +139,9 @@ namespace B4B
                         Console.Clear();
                         while (enter.Key != ConsoleKey.Enter)
                         {
-                            Console.WriteLine($"PLAYER {mage.PlayerName} USED FIRE ARMOR AND GAINED 100 ARMOR");
-                            Console.WriteLine($"PLAYER {mage.PlayerName} DAMAGES PHYSICAL ATTACKERS FOR THE NEXT 2 TURNS");
-                            PrintCharacterStats.PrintWM(mage, warr);
+                            Console.WriteLine($"PLAYER {mage.Name} USED FIRE ARMOR AND GAINED 150 ARMOR AND 150 HEALTH");
+                            Console.WriteLine();
+                            PrintCharacterStats.Print(mage, warr);
                             enter = Console.ReadKey();
                             Console.Clear();
                         }
@@ -162,9 +155,10 @@ namespace B4B
                         Console.Clear();
                         while (enter.Key != ConsoleKey.Enter)
                         {
-                            Console.WriteLine($"{mage.PlayerName} USED POLYMORPH ON {warr.PlayerName}");
-                            Console.WriteLine($"{warr.PlayerName} LOSES 2 TURNS...");
-                            PrintCharacterStats.PrintWM(mage, warr);
+                            Console.WriteLine($"{mage.Name} USED POLYMORPH ON {warr.Name}");
+                            Console.WriteLine($"{warr.Name} LOSES 2 TURNS...");
+                            Console.WriteLine();
+                            PrintCharacterStats.Print(mage, warr);
                             enter = Console.ReadKey();
                             Console.Clear();
                         }
@@ -175,9 +169,10 @@ namespace B4B
                         Console.Clear();
                         while (enter.Key != ConsoleKey.Enter)
                         {
-                            Console.WriteLine($"PLAYER {mage.PlayerName} USED FROZEN GROUND ON {warr.PlayerName} FOR A TOTAL OF {spell.Damage * 2} DAMAGE");
-                            Console.WriteLine($"PLAYER {warr.PlayerName} LOSES 1 TURN");
-                            PrintCharacterStats.PrintWM(mage, warr);
+                            Console.WriteLine($"PLAYER {mage.Name} USED FROZEN GROUND ON {warr.Name} FOR A TOTAL OF {spell.Damage * 2} DAMAGE");
+                            Console.WriteLine($"PLAYER {warr.Name} LOSES 1 TURN");
+                            Console.WriteLine();
+                            PrintCharacterStats.Print(mage, warr);
                             enter = Console.ReadKey();
                             Console.Clear();
                         }
@@ -191,8 +186,9 @@ namespace B4B
                         Console.Clear();
                         while (enter.Key != ConsoleKey.Enter)
                         {
-                            Console.WriteLine($"{mage.PlayerName} USED AMPLIFY MAGIC AND NOW HAS 2X SPELL POWER FOR 3 TURNS");
-                            PrintCharacterStats.PrintWM(mage, warr);
+                            Console.WriteLine($"{mage.Name} USED AMPLIFY MAGIC AND NOW HAS 2X SPELL POWER FOR 3 TURNS");
+                            Console.WriteLine();
+                            PrintCharacterStats.Print(mage, warr);
                             enter = Console.ReadKey();
                             Console.Clear();
                         }
@@ -203,8 +199,9 @@ namespace B4B
                         Console.Clear();
                         while (enter.Key != ConsoleKey.Enter)
                         {
-                            Console.WriteLine($"{mage.PlayerName} USED MANA REGENERATION AND GAINED 300 MANA");
-                            PrintCharacterStats.PrintWM(mage, warr);
+                            Console.WriteLine($"{mage.Name} USED MANA REGENERATION AND GAINED 300 MANA");
+                            Console.WriteLine();
+                            PrintCharacterStats.Print(mage, warr);
                             enter = Console.ReadKey();
                             Console.Clear();
                         }
@@ -215,9 +212,10 @@ namespace B4B
                         Console.Clear();
                         while (enter.Key != ConsoleKey.Enter)
                         {
-                            Console.WriteLine($"{mage.PlayerName} USED ICY VEINS AND NOW HAS 50% MORE SPELL POWER");
-                            Console.WriteLine($"{mage.PlayerName} LOSES 1 COOLDOWN POINT ON ALL OTHER SPELLS");
-                            PrintCharacterStats.PrintWM(mage, warr);
+                            Console.WriteLine($"{mage.Name} USED ICY VEINS AND NOW HAS 50% MORE SPELL POWER");
+                            Console.WriteLine($"{mage.Name} LOSES 1 COOLDOWN POINT ON ALL OTHER SPELLS");
+                            Console.WriteLine();
+                            PrintCharacterStats.Print(mage, warr);
                             enter = Console.ReadKey();
                             Console.Clear();
                         }
