@@ -13,10 +13,14 @@ In B4B each players selects a hero and a class for that hero.
 
 Then they battle TO THE DEATH!
 
-And in order to keep track of all the beers each winner has earned - an Earned beers option in the game menu was developed.
+To launch the program, start the console application and select a different option from the game menu.
+
+You can simply start the game by selecting the NEW GAME option in the game menu.
+
+And in order to keep track of all the beers each winner has earned - an EARNED BEERS option in the game menu was developed.
 There you can type in the Name you've used for your character and get a list of all the beers you've earned!
 
-In case you want to check out more about the hero types and classes you can select the Instructions option in the game menu.
+In case you want to check out more about the hero types and classes you can select the INSTRUCTIONS option in the game menu.
 
 *DISCLAIMER*
 B4B AND ITS CREATORS ARE NOT RESPONSIBLE FOR ANY MONEY LOSS, THEFT OR VIOLENCE.
