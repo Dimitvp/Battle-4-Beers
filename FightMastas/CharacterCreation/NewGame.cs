@@ -14,16 +14,18 @@ namespace FightMastas.GameProperties
         {
             Console.WriteLine("Enter name of first character:");
             var firstPlayerName = Console.ReadLine();
-            while (firstPlayerName.Length < 4 || firstPlayerName.Length > 16)
+            while (firstPlayerName.Length < 4 || firstPlayerName.Length > 16 || firstPlayerName.Contains(" "))
             {
                 Console.WriteLine("Player name must be between 4 and 16 characters");
+                Console.WriteLine("Player name must not contain ' ' - spaces");
                 firstPlayerName = Console.ReadLine();
             }
             Console.WriteLine("Enter name of second character:");
             var secondPlayerName = Console.ReadLine();
-            while (secondPlayerName.Length < 4 || secondPlayerName.Length > 16 || secondPlayerName == firstPlayerName)
+            while (secondPlayerName.Length < 4 || secondPlayerName.Length > 16 || secondPlayerName == firstPlayerName || secondPlayerName.Contains(" "))
             {
                 Console.WriteLine("Second player name must be between 4 and 16 characters and different than First player name");
+                Console.WriteLine("Player name must not contain ' ' - spaces");
                 secondPlayerName = Console.ReadLine();
             }
 
